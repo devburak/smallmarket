@@ -1,2 +1,3 @@
 node_modules
-next_config.js
+.next
+./next_config.js
