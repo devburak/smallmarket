@@ -18,28 +18,8 @@ import SettingsInputComponentIcon from '@material-ui/icons/SettingsInputComponen
 import TimerIcon from '@material-ui/icons/Timer';
 import SettingsIcon from '@material-ui/icons/Settings';
 import PhonelinkSetupIcon from '@material-ui/icons/PhonelinkSetup';
+import { useRouter } from 'next/router';
 
-const categories = [
-  {
-    id: 'Develop',
-    children: [
-      { id: 'Authentication', icon: <PeopleIcon />, active: true },
-      { id: 'Database', icon: <DnsRoundedIcon /> },
-      { id: 'Storage', icon: <PermMediaOutlinedIcon /> },
-      { id: 'Hosting', icon: <PublicIcon /> },
-      { id: 'Functions', icon: <SettingsEthernetIcon /> },
-      { id: 'ML Kit', icon: <SettingsInputComponentIcon /> },
-    ],
-  },
-  {
-    id: 'Quality',
-    children: [
-      { id: 'Analytics', icon: <SettingsIcon /> },
-      { id: 'Performance', icon: <TimerIcon /> },
-      { id: 'Test Lab', icon: <PhonelinkSetupIcon /> },
-    ],
-  },
-];
 
 const styles = theme => ({
   categoryHeader: {
@@ -83,8 +63,9 @@ const styles = theme => ({
 });
 
 function Navigator(props) {
-  const { classes, ...other } = props;
-
+  const { classes, categories, ...other } = props;
+ 
+  const router = useRouter()
   return (
     <Drawer variant="permanent" {...other}>
       <List disablePadding>
@@ -103,44 +84,40 @@ function Navigator(props) {
             Project Overview
           </ListItemText>
         </ListItem>
-        {categories.map(({ id, children }) => (
+        {categories && categories.map(({ id, name,slug }) => {
+              let active = router.query.slug === slug 
+
+          return(
           <React.Fragment key={id}>
-            <ListItem className={classes.categoryHeader}>
-              <ListItemText
-                classes={{
-                  primary: classes.categoryHeaderPrimary,
-                }}
-              >
-                {id}
-              </ListItemText>
-            </ListItem>
-            {children.map(({ id: childId, icon, active }) => (
               <ListItem
-                key={childId}
+                key={slug}
                 button
                 className={clsx(classes.item, active && classes.itemActiveItem)}
               >
-                <ListItemIcon className={classes.itemIcon}>{icon}</ListItemIcon>
+              
                 <ListItemText
                   classes={{
                     primary: classes.itemPrimary,
                   }}
                 >
-                  {childId}
+                  {name}
                 </ListItemText>
               </ListItem>
-            ))}
+            
 
             <Divider className={classes.divider} />
           </React.Fragment>
-        ))}
+        )})}
       </List>
     </Drawer>
   );
 }
 
+
+
 Navigator.propTypes = {
   classes: PropTypes.object.isRequired,
 };
+
 
 export default withStyles(styles)(Navigator);

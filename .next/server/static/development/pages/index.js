@@ -93,9 +93,9 @@ module.exports =
 /************************************************************************/
 /******/ ({
 
-/***/ "./components/Content.js":
+/***/ "./components/content.js":
 /*!*******************************!*\
-  !*** ./components/Content.js ***!
+  !*** ./components/content.js ***!
   \*******************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -130,7 +130,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_icons_Search__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Search__WEBPACK_IMPORTED_MODULE_12__);
 /* harmony import */ var _material_ui_icons_Refresh__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @material-ui/icons/Refresh */ "@material-ui/icons/Refresh");
 /* harmony import */ var _material_ui_icons_Refresh__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Refresh__WEBPACK_IMPORTED_MODULE_13__);
-var _jsxFileName = "C:\\REPO\\denizelektronik\\smallmarket\\components\\Content.js";
+var _jsxFileName = "/home/burak/REPO/smallmarket/components/content.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -303,9 +303,9 @@ Content.propTypes = {
 
 /***/ }),
 
-/***/ "./components/Header.js":
+/***/ "./components/header.js":
 /*!******************************!*\
-  !*** ./components/Header.js ***!
+  !*** ./components/header.js ***!
   \******************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -348,7 +348,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_16__);
 /* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @material-ui/core/styles */ "@material-ui/core/styles");
 /* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_17__);
-var _jsxFileName = "C:\\REPO\\denizelektronik\\smallmarket\\components\\Header.js";
+var _jsxFileName = "/home/burak/REPO/smallmarket/components/header.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -680,9 +680,9 @@ Header.propTypes = {
 
 /***/ }),
 
-/***/ "./components/Navigator.js":
+/***/ "./components/navigator.js":
 /*!*********************************!*\
-  !*** ./components/Navigator.js ***!
+  !*** ./components/navigator.js ***!
   \*********************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -731,9 +731,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_icons_Settings__WEBPACK_IMPORTED_MODULE_20___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Settings__WEBPACK_IMPORTED_MODULE_20__);
 /* harmony import */ var _material_ui_icons_PhonelinkSetup__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @material-ui/icons/PhonelinkSetup */ "@material-ui/icons/PhonelinkSetup");
 /* harmony import */ var _material_ui_icons_PhonelinkSetup__WEBPACK_IMPORTED_MODULE_21___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_PhonelinkSetup__WEBPACK_IMPORTED_MODULE_21__);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! next/router */ "next/router");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_22___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_22__);
 
 
-var _jsxFileName = "C:\\REPO\\denizelektronik\\smallmarket\\components\\Navigator.js";
+var _jsxFileName = "/home/burak/REPO/smallmarket/components/navigator.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
 
 
@@ -755,95 +757,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
 
 
 
-const categories = [{
-  id: 'Develop',
-  children: [{
-    id: 'Authentication',
-    icon: __jsx(_material_ui_icons_People__WEBPACK_IMPORTED_MODULE_13___default.a, {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 26
-      },
-      __self: undefined
-    }),
-    active: true
-  }, {
-    id: 'Database',
-    icon: __jsx(_material_ui_icons_DnsRounded__WEBPACK_IMPORTED_MODULE_14___default.a, {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 27
-      },
-      __self: undefined
-    })
-  }, {
-    id: 'Storage',
-    icon: __jsx(_material_ui_icons_PhotoSizeSelectActual__WEBPACK_IMPORTED_MODULE_15___default.a, {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 28
-      },
-      __self: undefined
-    })
-  }, {
-    id: 'Hosting',
-    icon: __jsx(_material_ui_icons_Public__WEBPACK_IMPORTED_MODULE_16___default.a, {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 29
-      },
-      __self: undefined
-    })
-  }, {
-    id: 'Functions',
-    icon: __jsx(_material_ui_icons_SettingsEthernet__WEBPACK_IMPORTED_MODULE_17___default.a, {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 30
-      },
-      __self: undefined
-    })
-  }, {
-    id: 'ML Kit',
-    icon: __jsx(_material_ui_icons_SettingsInputComponent__WEBPACK_IMPORTED_MODULE_18___default.a, {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 31
-      },
-      __self: undefined
-    })
-  }]
-}, {
-  id: 'Quality',
-  children: [{
-    id: 'Analytics',
-    icon: __jsx(_material_ui_icons_Settings__WEBPACK_IMPORTED_MODULE_20___default.a, {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 37
-      },
-      __self: undefined
-    })
-  }, {
-    id: 'Performance',
-    icon: __jsx(_material_ui_icons_Timer__WEBPACK_IMPORTED_MODULE_19___default.a, {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 38
-      },
-      __self: undefined
-    })
-  }, {
-    id: 'Test Lab',
-    icon: __jsx(_material_ui_icons_PhonelinkSetup__WEBPACK_IMPORTED_MODULE_21___default.a, {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 39
-      },
-      __self: undefined
-    })
-  }]
-}];
+
 
 const styles = theme => ({
   categoryHeader: {
@@ -888,50 +802,52 @@ const styles = theme => ({
 
 function Navigator(props) {
   const {
-    classes
+    classes,
+    categories
   } = props,
-        other = Object(_babel_runtime_corejs2_helpers_esm_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__["default"])(props, ["classes"]);
+        other = Object(_babel_runtime_corejs2_helpers_esm_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__["default"])(props, ["classes", "categories"]);
 
+  const router = Object(next_router__WEBPACK_IMPORTED_MODULE_22__["useRouter"])();
   return __jsx(_material_ui_core_Drawer__WEBPACK_IMPORTED_MODULE_7___default.a, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
     variant: "permanent"
   }, other, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 89
+      lineNumber: 70
     },
     __self: this
   }), __jsx(_material_ui_core_List__WEBPACK_IMPORTED_MODULE_8___default.a, {
     disablePadding: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 90
+      lineNumber: 71
     },
     __self: this
   }, __jsx(_material_ui_core_ListItem__WEBPACK_IMPORTED_MODULE_9___default.a, {
     className: clsx__WEBPACK_IMPORTED_MODULE_4___default()(classes.firebase, classes.item, classes.itemCategory),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 91
+      lineNumber: 72
     },
     __self: this
   }, "Paperbase"), __jsx(_material_ui_core_ListItem__WEBPACK_IMPORTED_MODULE_9___default.a, {
     className: clsx__WEBPACK_IMPORTED_MODULE_4___default()(classes.item, classes.itemCategory),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 94
+      lineNumber: 75
     },
     __self: this
   }, __jsx(_material_ui_core_ListItemIcon__WEBPACK_IMPORTED_MODULE_10___default.a, {
     className: classes.itemIcon,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 95
+      lineNumber: 76
     },
     __self: this
   }, __jsx(_material_ui_icons_Home__WEBPACK_IMPORTED_MODULE_12___default.a, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 96
+      lineNumber: 77
     },
     __self: this
   })), __jsx(_material_ui_core_ListItemText__WEBPACK_IMPORTED_MODULE_11___default.a, {
@@ -940,72 +856,49 @@ function Navigator(props) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 98
+      lineNumber: 79
     },
     __self: this
-  }, "Project Overview")), categories.map(({
+  }, "Project Overview")), categories && categories.map(({
     id,
-    children
-  }) => __jsx(react__WEBPACK_IMPORTED_MODULE_2___default.a.Fragment, {
-    key: id,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 107
-    },
-    __self: this
-  }, __jsx(_material_ui_core_ListItem__WEBPACK_IMPORTED_MODULE_9___default.a, {
-    className: classes.categoryHeader,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 108
-    },
-    __self: this
-  }, __jsx(_material_ui_core_ListItemText__WEBPACK_IMPORTED_MODULE_11___default.a, {
-    classes: {
-      primary: classes.categoryHeaderPrimary
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 109
-    },
-    __self: this
-  }, id)), children.map(({
-    id: childId,
-    icon,
-    active
-  }) => __jsx(_material_ui_core_ListItem__WEBPACK_IMPORTED_MODULE_9___default.a, {
-    key: childId,
-    button: true,
-    className: clsx__WEBPACK_IMPORTED_MODULE_4___default()(classes.item, active && classes.itemActiveItem),
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 118
-    },
-    __self: this
-  }, __jsx(_material_ui_core_ListItemIcon__WEBPACK_IMPORTED_MODULE_10___default.a, {
-    className: classes.itemIcon,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 123
-    },
-    __self: this
-  }, icon), __jsx(_material_ui_core_ListItemText__WEBPACK_IMPORTED_MODULE_11___default.a, {
-    classes: {
-      primary: classes.itemPrimary
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 124
-    },
-    __self: this
-  }, childId))), __jsx(_material_ui_core_Divider__WEBPACK_IMPORTED_MODULE_6___default.a, {
-    className: classes.divider,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 134
-    },
-    __self: this
-  })))));
+    name,
+    slug
+  }) => {
+    let active = router.query.slug === slug;
+    return __jsx(react__WEBPACK_IMPORTED_MODULE_2___default.a.Fragment, {
+      key: id,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 91
+      },
+      __self: this
+    }, __jsx(_material_ui_core_ListItem__WEBPACK_IMPORTED_MODULE_9___default.a, {
+      key: slug,
+      button: true,
+      className: clsx__WEBPACK_IMPORTED_MODULE_4___default()(classes.item, active && classes.itemActiveItem),
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 92
+      },
+      __self: this
+    }, __jsx(_material_ui_core_ListItemText__WEBPACK_IMPORTED_MODULE_11___default.a, {
+      classes: {
+        primary: classes.itemPrimary
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 98
+      },
+      __self: this
+    }, name)), __jsx(_material_ui_core_Divider__WEBPACK_IMPORTED_MODULE_6___default.a, {
+      className: classes.divider,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 108
+      },
+      __self: this
+    }));
+  })));
 }
 
 Navigator.propTypes = {
@@ -1051,9 +944,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_12__);
 /* harmony import */ var _material_ui_core_Link__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @material-ui/core/Link */ "@material-ui/core/Link");
 /* harmony import */ var _material_ui_core_Link__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Link__WEBPACK_IMPORTED_MODULE_13__);
-/* harmony import */ var _Navigator__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./Navigator */ "./components/Navigator.js");
-/* harmony import */ var _Content__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./Content */ "./components/Content.js");
-/* harmony import */ var _Header__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./Header */ "./components/Header.js");
+/* harmony import */ var _navigator__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./navigator */ "./components/navigator.js");
+/* harmony import */ var _content__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./content */ "./components/content.js");
+/* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./header */ "./components/header.js");
 
 
 
@@ -1061,7 +954,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "C:\\REPO\\denizelektronik\\smallmarket\\components\\paperbase.js";
+var _jsxFileName = "/home/burak/REPO/smallmarket/components/paperbase.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement;
 
 function ownKeys(object, enumerableOnly) { var keys = _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_5___default()(object); if (_babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_4___default.a) { var symbols = _babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_4___default()(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_3___default()(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
@@ -1237,7 +1130,8 @@ const styles = {
 
 function Paperbase(props) {
   const {
-    classes
+    classes,
+    categories
   } = props;
   const [mobileOpen, setMobileOpen] = react__WEBPACK_IMPORTED_MODULE_7___default.a.useState(false);
 
@@ -1245,31 +1139,32 @@ function Paperbase(props) {
     setMobileOpen(!mobileOpen);
   };
 
+  console.log('paperbase ', categories[1]);
   return __jsx(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_9__["ThemeProvider"], {
     theme: theme,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 173
+      lineNumber: 174
     },
     __self: this
   }, __jsx("div", {
     className: classes.root,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 174
+      lineNumber: 175
     },
     __self: this
   }, __jsx(_material_ui_core_CssBaseline__WEBPACK_IMPORTED_MODULE_10___default.a, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 175
+      lineNumber: 176
     },
     __self: this
   }), __jsx("nav", {
     className: classes.drawer,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 176
+      lineNumber: 177
     },
     __self: this
   }, __jsx(_material_ui_core_Hidden__WEBPACK_IMPORTED_MODULE_11___default.a, {
@@ -1277,10 +1172,10 @@ function Paperbase(props) {
     implementation: "js",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 177
+      lineNumber: 178
     },
     __self: this
-  }, __jsx(_Navigator__WEBPACK_IMPORTED_MODULE_14__["default"], {
+  }, __jsx(_navigator__WEBPACK_IMPORTED_MODULE_14__["default"], {
     PaperProps: {
       style: {
         width: drawerWidth
@@ -1289,9 +1184,10 @@ function Paperbase(props) {
     variant: "temporary",
     open: mobileOpen,
     onClose: handleDrawerToggle,
+    categories: categories,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 178
+      lineNumber: 179
     },
     __self: this
   })), __jsx(_material_ui_core_Hidden__WEBPACK_IMPORTED_MODULE_11___default.a, {
@@ -1299,58 +1195,59 @@ function Paperbase(props) {
     implementation: "css",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 185
+      lineNumber: 187
     },
     __self: this
-  }, __jsx(_Navigator__WEBPACK_IMPORTED_MODULE_14__["default"], {
+  }, __jsx(_navigator__WEBPACK_IMPORTED_MODULE_14__["default"], {
     PaperProps: {
       style: {
         width: drawerWidth
       }
     },
+    categories: categories,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 186
+      lineNumber: 188
     },
     __self: this
   }))), __jsx("div", {
     className: classes.app,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 189
+      lineNumber: 191
     },
     __self: this
-  }, __jsx(_Header__WEBPACK_IMPORTED_MODULE_16__["default"], {
+  }, __jsx(_header__WEBPACK_IMPORTED_MODULE_16__["default"], {
     onDrawerToggle: handleDrawerToggle,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 190
+      lineNumber: 192
     },
     __self: this
   }), __jsx("main", {
     className: classes.main,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 191
+      lineNumber: 193
     },
     __self: this
-  }, __jsx(_Content__WEBPACK_IMPORTED_MODULE_15__["default"], {
+  }, __jsx(_content__WEBPACK_IMPORTED_MODULE_15__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 192
+      lineNumber: 194
     },
     __self: this
   })), __jsx("footer", {
     className: classes.footer,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 194
+      lineNumber: 196
     },
     __self: this
   }, __jsx(Copyright, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 195
+      lineNumber: 197
     },
     __self: this
   })))));
@@ -1585,7 +1482,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_config__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/config */ "next/config");
 /* harmony import */ var next_config__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_config__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _components_paperbase__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/paperbase */ "./components/paperbase.js");
-var _jsxFileName = "C:\\REPO\\denizelektronik\\smallmarket\\pages\\index.js";
+/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! isomorphic-unfetch */ "isomorphic-unfetch");
+/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_3__);
+var _jsxFileName = "/home/burak/REPO/smallmarket/pages/index.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -1594,15 +1493,28 @@ const {
   serverRuntimeConfig,
   publicRuntimeConfig
 } = next_config__WEBPACK_IMPORTED_MODULE_1___default()();
+
 console.log(serverRuntimeConfig.mySecret); // Will only be available on the server side
 
-const Index = () => __jsx(_components_paperbase__WEBPACK_IMPORTED_MODULE_2__["default"], {
+const Index = props => __jsx(_components_paperbase__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  categories: props.categories,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 7
+    lineNumber: 8
   },
   __self: undefined
 });
+
+Index.getInitialProps = async function () {
+  console.log('get initial');
+  console.log('URL :  ' + serverRuntimeConfig.appURL + 'allcategories');
+  const res = await isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_3___default()(serverRuntimeConfig.appURL + 'allcategories');
+  const data = await res.json();
+  console.log(data);
+  return {
+    categories: data
+  };
+};
 
 /* harmony default export */ __webpack_exports__["default"] = (Index);
 
@@ -1615,7 +1527,7 @@ const Index = () => __jsx(_components_paperbase__WEBPACK_IMPORTED_MODULE_2__["de
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\REPO\denizelektronik\smallmarket\pages\index.js */"./pages/index.js");
+module.exports = __webpack_require__(/*! /home/burak/REPO/smallmarket/pages/index.js */"./pages/index.js");
 
 
 /***/ }),
@@ -2115,6 +2027,17 @@ module.exports = require("core-js/library/fn/object/keys");
 
 /***/ }),
 
+/***/ "isomorphic-unfetch":
+/*!*************************************!*\
+  !*** external "isomorphic-unfetch" ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("isomorphic-unfetch");
+
+/***/ }),
+
 /***/ "next/config":
 /*!******************************!*\
   !*** external "next/config" ***!
@@ -2123,6 +2046,17 @@ module.exports = require("core-js/library/fn/object/keys");
 /***/ (function(module, exports) {
 
 module.exports = require("next/config");
+
+/***/ }),
+
+/***/ "next/router":
+/*!******************************!*\
+  !*** external "next/router" ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("next/router");
 
 /***/ }),
 

@@ -5,9 +5,9 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Hidden from '@material-ui/core/Hidden';
 import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
-import Navigator from './Navigator';
-import Content from './Content';
-import Header from './Header';
+import Navigator from './navigator';
+import Content from './content';
+import Header from './header';
 
 function Copyright() {
   return (
@@ -162,13 +162,14 @@ const styles = {
 };
 
 function Paperbase(props) {
-  const { classes } = props;
+  const { classes ,categories } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
 
+  console.log('paperbase ' , categories[1])
   return (
     <ThemeProvider theme={theme}>
       <div className={classes.root}>
@@ -180,10 +181,11 @@ function Paperbase(props) {
               variant="temporary"
               open={mobileOpen}
               onClose={handleDrawerToggle}
+              categories={categories}
             />
           </Hidden>
           <Hidden xsDown implementation="css">
-            <Navigator PaperProps={{ style: { width: drawerWidth } }} />
+            <Navigator PaperProps={{ style: { width: drawerWidth } }}   categories={categories} />
           </Hidden>
         </nav>
         <div className={classes.app}>
