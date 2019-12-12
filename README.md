@@ -1,5 +1,5 @@
 # smallmarket
-Deniz Elektronik frontend with 
+Deniz Elektronik frontend with Next JS 
 
 # Bağlı teknolojiler
 
