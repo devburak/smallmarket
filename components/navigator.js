@@ -19,6 +19,7 @@ import TimerIcon from '@material-ui/icons/Timer';
 import SettingsIcon from '@material-ui/icons/Settings';
 import PhonelinkSetupIcon from '@material-ui/icons/PhonelinkSetup';
 import { useRouter } from 'next/router';
+import Link from '@material-ui/core/Link';
 
 
 const styles = theme => ({
@@ -63,38 +64,29 @@ const styles = theme => ({
 });
 
 function Navigator(props) {
-  const { classes, categories, ...other } = props;
- 
+  const { classes, categories, sitename,...other } = props;
+
   const router = useRouter()
   return (
     <Drawer variant="permanent" {...other}>
       <List disablePadding>
         <ListItem className={clsx(classes.firebase, classes.item, classes.itemCategory)}>
-          Paperbase
+          
+          <Link color="inherit" href='#'>
+             {sitename}
+       </Link>    
         </ListItem>
-        <ListItem className={clsx(classes.item, classes.itemCategory)}>
-          <ListItemIcon className={classes.itemIcon}>
-            <HomeIcon />
-          </ListItemIcon>
-          <ListItemText
-            classes={{
-              primary: classes.itemPrimary,
-            }}
-          >
-            Project Overview
-          </ListItemText>
-        </ListItem>
-        {categories && categories.map(({ id, name,slug }) => {
-              let active = router.query.slug === slug 
+        {categories && categories.map(({ id, name, slug },index) => {
+          let active = router.query.slug === slug
 
-          return(
-          <React.Fragment key={id}>
+          return (
+            <React.Fragment key={index}>
               <ListItem
                 key={slug}
                 button
                 className={clsx(classes.item, active && classes.itemActiveItem)}
               >
-              
+
                 <ListItemText
                   classes={{
                     primary: classes.itemPrimary,
@@ -103,11 +95,9 @@ function Navigator(props) {
                   {name}
                 </ListItemText>
               </ListItem>
-            
-
-            <Divider className={classes.divider} />
-          </React.Fragment>
-        )})}
+            </React.Fragment>
+          )
+        })}
       </List>
     </Drawer>
   );

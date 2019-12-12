@@ -42,7 +42,7 @@ const styles = theme => ({
 });
 
 function Header(props) {
-  const { classes, onDrawerToggle } = props;
+  const { classes, onDrawerToggle ,user} = props;
 
   return (
     <React.Fragment>
@@ -93,12 +93,12 @@ function Header(props) {
           <Grid container alignItems="center" spacing={1}>
             <Grid item xs>
               <Typography color="inherit" variant="h5" component="h1">
-                Authentication
+              {user && user.name}  
               </Typography>
             </Grid>
             <Grid item>
               <Button className={classes.button} variant="outlined" color="inherit" size="small">
-                Web setup
+                Sepet
               </Button>
             </Grid>
             <Grid item>
@@ -118,12 +118,7 @@ function Header(props) {
         position="static"
         elevation={0}
       >
-        <Tabs value={0} textColor="inherit">
-          <Tab textColor="inherit" label="Users" />
-          <Tab textColor="inherit" label="Sign-in method" />
-          <Tab textColor="inherit" label="Templates" />
-          <Tab textColor="inherit" label="Usage" />
-        </Tabs>
+      
       </AppBar>
     </React.Fragment>
   );

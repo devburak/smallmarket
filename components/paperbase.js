@@ -9,13 +9,17 @@ import Navigator from './navigator';
 import Content from './content';
 import Header from './header';
 
-function Copyright() {
+function Copyright(props) {
+  const {name,url} = props.siteinformation
+
   return (
+    
     <Typography variant="body2" color="textSecondary" align="center">
       {'Copyright © '}
-      <Link color="inherit" href="https://material-ui.com/">
-        Your Website
-      </Link>{' '}
+     <Link color="inherit" href={url}>
+     {name}
+       </Link>    
+       {' '}
       {new Date().getFullYear()}
       {'.'}
     </Typography>
@@ -162,15 +166,14 @@ const styles = {
 };
 
 function Paperbase(props) {
-  const { classes ,categories } = props;
+  const { classes ,categories,siteinformation } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
-
-  console.log('paperbase ' , categories[1])
-  return (
+  console.log('site information on paperbase', siteinformation)
+  return ( 
     <ThemeProvider theme={theme}>
       <div className={classes.root}>
         <CssBaseline />
@@ -182,19 +185,22 @@ function Paperbase(props) {
               open={mobileOpen}
               onClose={handleDrawerToggle}
               categories={categories}
+              sitename = {siteinformation.name}
             />
           </Hidden>
           <Hidden xsDown implementation="css">
-            <Navigator PaperProps={{ style: { width: drawerWidth } }}   categories={categories} />
+            <Navigator PaperProps={{ style: { width: drawerWidth } }}  
+            sitename = {siteinformation.name}
+             categories={categories} />
           </Hidden>
         </nav>
         <div className={classes.app}>
           <Header onDrawerToggle={handleDrawerToggle} />
           <main className={classes.main}>
-            <Content />
+          {props.children}
           </main>
           <footer className={classes.footer}>
-            <Copyright />
+            <Copyright siteinformation={siteinformation} />
           </footer>
         </div>
       </div>
