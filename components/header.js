@@ -16,6 +16,10 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Tooltip from '@material-ui/core/Tooltip';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
+import { inject, observer } from 'mobx-react'
+
+@inject('store')
+@observer
 
 const lightColor = 'rgba(255, 255, 255, 0.7)';
 
@@ -64,7 +68,7 @@ function Header(props) {
             <Grid item xs />
             <Grid item>
               <Link className={classes.link} href="#" variant="body2">
-                Go to docs
+                Üye Girişi
               </Link>
             </Grid>
             <Grid item>
@@ -75,9 +79,9 @@ function Header(props) {
               </Tooltip>
             </Grid>
             <Grid item>
-              <IconButton color="inherit" className={classes.iconButtonAvatar}>
+            { this.props.login &&  <IconButton color="inherit" className={classes.iconButtonAvatar}>
                 <Avatar src="/static/images/avatar/1.jpg" alt="My Avatar" />
-              </IconButton>
+              </IconButton>}
             </Grid>
           </Grid>
         </Toolbar>

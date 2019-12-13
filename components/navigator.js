@@ -20,7 +20,8 @@ import SettingsIcon from '@material-ui/icons/Settings';
 import PhonelinkSetupIcon from '@material-ui/icons/PhonelinkSetup';
 import { useRouter } from 'next/router';
 import Link from '@material-ui/core/Link';
-
+import Avatar from '@material-ui/core/Avatar';
+import Tooltip from '@material-ui/core/Tooltip';
 
 const styles = theme => ({
   categoryHeader: {
@@ -64,19 +65,21 @@ const styles = theme => ({
 });
 
 function Navigator(props) {
-  const { classes, categories, sitename,...other } = props;
+  const { classes, categories, sitename, ...other } = props;
 
   const router = useRouter()
   return (
     <Drawer variant="permanent" {...other}>
       <List disablePadding>
-        <ListItem className={clsx(classes.firebase, classes.item, classes.itemCategory)}>
-          
-          <Link color="inherit" href='#'>
-             {sitename}
-       </Link>    
+        <ListItem className={clsx(classes.firebase, classes.item, classes.itemCategory)} style={{ justifyContent: 'center' }}>
+
+        <Link color="inherit" href='#'>
+        <Tooltip title={sitename}>
+          <Avatar src="/Logo.png" alt="my image" style={{ height: 90, width:90 }} />
+        </Tooltip>
+          </Link>
         </ListItem>
-        {categories && categories.map(({ id, name, slug },index) => {
+        {categories && categories.map(({ id, name, slug }, index) => {
           let active = router.query.slug === slug
 
           return (
