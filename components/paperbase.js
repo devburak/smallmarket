@@ -9,17 +9,19 @@ import Navigator from './navigator';
 import Content from './content';
 import Header from './header';
 
+import SepetStore from '../sepetStore'
+
 function Copyright(props) {
-  const {name,url} = props.siteinformation
+  const { name, url } = props.siteinformation
 
   return (
-    
+
     <Typography variant="body2" color="textSecondary" align="center">
       {'Copyright © '}
-     <Link color="inherit" href={url}>
-     {name}
-       </Link>    
-       {' '}
+      <Link color="inherit" href={url}>
+        {name}
+      </Link>
+      {' '}
       {new Date().getFullYear()}
       {'.'}
     </Typography>
@@ -166,44 +168,48 @@ const styles = {
 };
 
 function Paperbase(props) {
-  const { classes ,categories,siteinformation } = props;
+  const { classes, categories } = props;
+  const siteinformation={name:'Deniz Elektronik',adres:'MERKEZEFENDİ / DENİZLİ', url:'https://denizelectronic.com'}
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
   console.log('site information on paperbase', siteinformation)
-  return ( 
+
+  return (
     <ThemeProvider theme={theme}>
-      <div className={classes.root}>
-        <CssBaseline />
-        <nav className={classes.drawer}>
-          <Hidden smUp implementation="js">
-            <Navigator
-              PaperProps={{ style: { width: drawerWidth } }}
-              variant="temporary"
-              open={mobileOpen}
-              onClose={handleDrawerToggle}
-              categories={categories}
-              sitename = {siteinformation.name}
-            />
-          </Hidden>
-          <Hidden xsDown implementation="css">
-            <Navigator PaperProps={{ style: { width: drawerWidth } }}  
-            sitename = {siteinformation.name}
-             categories={categories} />
-          </Hidden>
-        </nav>
-        <div className={classes.app}>
-          <Header onDrawerToggle={handleDrawerToggle} />
-          <main className={classes.main}>
-          {props.children}
-          </main>
-          <footer className={classes.footer}>
-            <Copyright siteinformation={siteinformation} />
-          </footer>
+      <SepetStore>
+        <div className={classes.root}>
+          <CssBaseline />
+          <nav className={classes.drawer}>
+            <Hidden smUp implementation="js">
+              <Navigator
+                PaperProps={{ style: { width: drawerWidth } }}
+                variant="temporary"
+                open={mobileOpen}
+                onClose={handleDrawerToggle}
+                categories={categories}
+                sitename={siteinformation.name}
+              />
+            </Hidden>
+            <Hidden xsDown implementation="css">
+              <Navigator PaperProps={{ style: { width: drawerWidth } }}
+                sitename={siteinformation.name}
+                categories={categories} />
+            </Hidden>
+          </nav>
+          <div className={classes.app}>
+            <Header onDrawerToggle={handleDrawerToggle} />
+            <main className={classes.main}>
+              {props.children}
+            </main>
+            <footer className={classes.footer}>
+              <Copyright siteinformation={siteinformation} />
+            </footer>
+          </div>
         </div>
-      </div>
+      </SepetStore>
     </ThemeProvider>
   );
 }

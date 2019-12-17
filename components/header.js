@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{ useContext } from 'react';
 import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
 import Avatar from '@material-ui/core/Avatar';
@@ -16,10 +16,10 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Tooltip from '@material-ui/core/Tooltip';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
-import { inject, observer } from 'mobx-react'
+import LoginButton from './loginButton'
+import SepetButton from './sepetButton'
+import Store from '../userstore';
 
-@inject('store')
-@observer
 
 const lightColor = 'rgba(255, 255, 255, 0.7)';
 
@@ -46,10 +46,13 @@ const styles = theme => ({
 });
 
 function Header(props) {
-  const { classes, onDrawerToggle ,user} = props;
+  const { classes, onDrawerToggle } = props;
+ 
+
 
   return (
     <React.Fragment>
+      <Store>
       <AppBar color="primary" position="sticky" elevation={0}>
         <Toolbar>
           <Grid container spacing={1} alignItems="center">
@@ -67,9 +70,9 @@ function Header(props) {
             </Hidden>
             <Grid item xs />
             <Grid item>
-              <Link className={classes.link} href="#" variant="body2">
-                Üye Girişi
-              </Link>
+            <LoginButton className={classes.button} variant="outlined" color="inherit" size="small" 
+           >
+             </LoginButton>
             </Grid>
             <Grid item>
               <Tooltip title="Alerts • No alerts">
@@ -78,11 +81,7 @@ function Header(props) {
                 </IconButton>
               </Tooltip>
             </Grid>
-            <Grid item>
-            { this.props.login &&  <IconButton color="inherit" className={classes.iconButtonAvatar}>
-                <Avatar src="/static/images/avatar/1.jpg" alt="My Avatar" />
-              </IconButton>}
-            </Grid>
+          
           </Grid>
         </Toolbar>
       </AppBar>
@@ -97,13 +96,15 @@ function Header(props) {
           <Grid container alignItems="center" spacing={1}>
             <Grid item xs>
               <Typography color="inherit" variant="h5" component="h1">
-              {user && user.name}  
+              
               </Typography>
             </Grid>
             <Grid item>
-              <Button className={classes.button} variant="outlined" color="inherit" size="small">
-                Sepet
-              </Button>
+              <SepetButton className={classes.button} variant="outlined" color="inherit" size="small"
+             >
+                  
+              </SepetButton>
+
             </Grid>
             <Grid item>
               <Tooltip title="Help">
@@ -124,6 +125,7 @@ function Header(props) {
       >
       
       </AppBar>
+      </Store>
     </React.Fragment>
   );
 }

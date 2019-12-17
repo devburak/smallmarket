@@ -1,27 +1,21 @@
-import React from 'react';
+import React , {useEffect,useState} from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import { withStyles } from '@material-ui/core/styles';
-import Divider from '@material-ui/core/Divider';
 import Drawer from '@material-ui/core/Drawer';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import HomeIcon from '@material-ui/icons/Home';
-import PeopleIcon from '@material-ui/icons/People';
-import DnsRoundedIcon from '@material-ui/icons/DnsRounded';
-import PermMediaOutlinedIcon from '@material-ui/icons/PhotoSizeSelectActual';
-import PublicIcon from '@material-ui/icons/Public';
-import SettingsEthernetIcon from '@material-ui/icons/SettingsEthernet';
-import SettingsInputComponentIcon from '@material-ui/icons/SettingsInputComponent';
-import TimerIcon from '@material-ui/icons/Timer';
-import SettingsIcon from '@material-ui/icons/Settings';
-import PhonelinkSetupIcon from '@material-ui/icons/PhonelinkSetup';
+
 import { useRouter } from 'next/router';
 import Link from '@material-ui/core/Link';
 import Avatar from '@material-ui/core/Avatar';
 import Tooltip from '@material-ui/core/Tooltip';
+
+import getConfig from 'next/config'
+const { serverRuntimeConfig, publicRuntimeConfig } = getConfig()
+import fetch from 'isomorphic-unfetch'
+
 
 const styles = theme => ({
   categoryHeader: {
@@ -35,13 +29,10 @@ const styles = theme => ({
     paddingTop: 1,
     paddingBottom: 1,
     color: 'rgba(255, 255, 255, 0.7)',
-    '&:hover,&:focus': {
-      backgroundColor: 'rgba(255, 255, 255, 0.08)',
-    },
+    
   },
   itemCategory: {
-    backgroundColor: '#232f3e',
-    boxShadow: '0 -1px 0 #404854 inset',
+    backgroundColor: '#eaeff1',
     paddingTop: theme.spacing(2),
     paddingBottom: theme.spacing(2),
   },
@@ -64,16 +55,31 @@ const styles = theme => ({
   },
 });
 
-function Navigator(props) {
-  const { classes, categories, sitename, ...other } = props;
 
+
+function Navigator(props) {
+  const { classes,  sitename, ...other } = props;
+  const [categories, setCategories] = useState([])
+
+useEffect(() => {
+  async function fetchData() {
+  const res = await fetch(publicRuntimeConfig.appURL+'allcategories');
+  const data = await res.json();
+  setCategories(data)
+  
+}
+  fetchData();
+},[]);
   const router = useRouter()
+
   return (
-    <Drawer variant="permanent" {...other}>
-      <List disablePadding>
+    <Drawer variant="permanent" {...other} > 
+     
+    {console.log('cc : ',categories)}
+      <List disablePadding >
         <ListItem className={clsx(classes.firebase, classes.item, classes.itemCategory)} style={{ justifyContent: 'center' }}>
 
-        <Link color="inherit" href='#'>
+        <Link color="inherit" href='/'>
         <Tooltip title={sitename}>
           <Avatar src="/Logo.png" alt="my image" style={{ height: 90, width:90 }} />
         </Tooltip>
