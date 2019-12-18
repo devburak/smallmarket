@@ -12,7 +12,7 @@ import IconButton from '@material-ui/core/IconButton';
 import { withStyles } from '@material-ui/core/styles';
 import LabelIcon from '@material-ui/icons/Label';
 import RefreshIcon from '@material-ui/icons/Refresh';
-
+import ImageShow from './imageShow'
 import AddsepetButton from './addsepetButton';
 
 const styles = theme => ({
@@ -36,11 +36,17 @@ const styles = theme => ({
   contentWrapper: {
     margin: '40px 16px',
   },
+  cardPricing: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'baseline',
+    marginBottom: theme.spacing(2),
+  },
 });
 
 function UrunCard(props) {
   const { classes,urun } = props;
-
+  console.log('urun image : ' , urun.Images)
   return (
     <Paper className={classes.paper}>
       <AppBar className={classes.searchBar} position="static" color="default" elevation={0}>
@@ -53,15 +59,29 @@ function UrunCard(props) {
             {urun && urun.name }
             </Grid>
             <Grid item>
-            <AddsepetButton />
+            <AddsepetButton urunid={urun && urun._id}/>
             </Grid>
           </Grid>
         </Toolbar>
       </AppBar>
       <div className={classes.contentWrapper}>
-        <Typography color="textSecondary" align="center">
-          Henüz Hiçbir Ürün verisi gelmedi
+      <Grid container spacing={2} alignItems="center">
+      <Grid item  xs={12} sm={8} md={8}>
+      {urun &&   <ImageShow images={urun.Images}/>}
+        <Typography color="textSecondary" >
+          {urun ? urun.explanation:'Henüz Hiçbir Ürün verisi gelmedi'}
         </Typography>
+        </Grid>
+        <Grid item  xs={12} sm={4} md={4}>
+        <div className={classes.cardPricing}>
+                    <Typography component="h2" variant="h3" color="textPrimary">
+                     $ {urun && urun.price.USD}
+                    </Typography>
+                    
+                  </div>
+        </Grid>
+        
+        </Grid>
       </div>
     </Paper>
   );

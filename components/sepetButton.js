@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext,useState } from 'react'
 // load main context
 import { SepetContext } from '../sepetStore'
 // load action
@@ -7,9 +7,13 @@ import SBadge from './badge'
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 
 const SepetButton = (props) => {
+
 const { state,dispatch } = useContext(SepetContext)
 const {item} = props
-const updateName = () => ({ type: 'updateName' , item })
+const l = state.item && state.item.length 
+console.log(state.item && state.item.length  )
+const updateName = () => ({ type: 'updateName'  })
+
 return (
     
         <Button variant="outlined" color="inherit" size="small"
@@ -18,7 +22,7 @@ return (
             onClick={() => dispatch(updateName())}
         >
             sepete git
-            <SBadge content={state.lenght}>
+            <SBadge content={l}>
            <ShoppingCartIcon /></SBadge>
       </Button>
   

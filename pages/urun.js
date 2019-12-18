@@ -6,10 +6,11 @@ import fetch from 'isomorphic-unfetch'
 
 const Urun = (props) => {
 
+    const {urunler} = props
     return(
         <Paperbase categories = {props.categories} 
         siteinformation = {props.siteinformation}>
-            <UrunCard>
+            <UrunCard urun={urunler[0]}>
                 
             </UrunCard>
         </Paperbase>
@@ -18,8 +19,8 @@ const Urun = (props) => {
 
 Urun.getInitialProps = async function() {
     
-    const res = await fetch(serverRuntimeConfig.appURL+'allcategories');
+    const res = await fetch(serverRuntimeConfig.appURL+'products');
     const data = await res.json();
-    return {categories : data, siteinformation:{name:'Deniz Elektronik',adres:'MERKEZEFENDİ / DENİZLİ', url:'https://denizelectronic.com'}}
+    return {urunler : data}
   }
   export default Urun;

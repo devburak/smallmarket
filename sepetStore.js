@@ -5,12 +5,9 @@ import { node } from 'prop-types'
 import sepetReducer from './reducer/sepetReducer'
 // craete initial payload
 
-const sepet = [
-    {
-        id:undefined,
-        piece:0
-    }
-]
+const sepet = {
+  item :[]
+}
 // create context
 export const SepetContext = createContext(sepet);
 // create Store

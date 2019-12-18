@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import {useState,useContext} from 'react'
 
 import Button from '@material-ui/core/Button';
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
@@ -10,6 +10,7 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import AddIcon from '@material-ui/icons/Add';
 import RemoveIcon from '@material-ui/icons/Remove';
+import { SepetContext } from '../sepetStore'
 
 const styles = theme => ({
     root: {
@@ -44,7 +45,7 @@ const styles = theme => ({
 });
 
 const AddsepetButton = (props) => {
-    const { classes  } = props;
+    const { classes ,urunid } = props;
     const [piece,setPiece] = useState(1)
 
     const up = () => {
@@ -56,6 +57,10 @@ const AddsepetButton = (props) => {
         setPiece(piece-1);
     }
 
+    const { state,dispatch } = useContext(SepetContext)
+    const item = {_id:urunid,piece:piece}
+    const addItem = () => ({ type: 'addItem' , item })
+
     return (
         <Paper className={classes.root}>
             <IconButton className={classes.iconButton} aria-label="up" onClick={up}>
@@ -63,7 +68,7 @@ const AddsepetButton = (props) => {
             </IconButton>
             <InputBase
                 className={classes.inputbase}
-                defaultValue={1}
+               
                 value={piece}
                 disabled
                 inputProps={{ 
@@ -77,7 +82,9 @@ const AddsepetButton = (props) => {
             <IconButton className={classes.iconButton} aria-label="down" onClick={down}>
                 <RemoveIcon fontSize="small" />
             </IconButton>
-            <Button variant="contained" color="primary" className={classes.addUser}>
+            <Button variant="contained" color="primary" className={classes.addUser} disabled={!urunid}
+                onClick={()=>dispatch(addItem())}
+            >
                 sepete ekle
       </Button>
         </Paper>
