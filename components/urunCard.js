@@ -13,6 +13,8 @@ import { withStyles } from '@material-ui/core/styles';
 import LabelIcon from '@material-ui/icons/Label';
 import RefreshIcon from '@material-ui/icons/Refresh';
 
+import AddsepetButton from './addsepetButton';
+
 const styles = theme => ({
   paper: {
     maxWidth: 936,
@@ -51,21 +53,14 @@ function UrunCard(props) {
             {urun && urun.name }
             </Grid>
             <Grid item>
-              <Button variant="contained" color="primary" className={classes.addUser}>
-                Add user
-              </Button>
-              <Tooltip title="Reload">
-                <IconButton>
-                  <RefreshIcon className={classes.block} color="inherit" />
-                </IconButton>
-              </Tooltip>
+            <AddsepetButton />
             </Grid>
           </Grid>
         </Toolbar>
       </AppBar>
       <div className={classes.contentWrapper}>
         <Typography color="textSecondary" align="center">
-          No users for this project yet
+          Henüz Hiçbir Ürün verisi gelmedi
         </Typography>
       </div>
     </Paper>

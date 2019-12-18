@@ -18,7 +18,7 @@ return (
             onClick={() => dispatch(updateName())}
         >
             sepete git
-            <SBadge >
+            <SBadge content={state.lenght}>
            <ShoppingCartIcon /></SBadge>
       </Button>
   
