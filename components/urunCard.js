@@ -46,7 +46,6 @@ const styles = theme => ({
 
 function UrunCard(props) {
   const { classes,urun } = props;
-  console.log('urun image : ' , urun.Images)
   return (
     <Paper className={classes.paper}>
       <AppBar className={classes.searchBar} position="static" color="default" elevation={0}>
@@ -67,7 +66,7 @@ function UrunCard(props) {
       <div className={classes.contentWrapper}>
       <Grid container spacing={2} alignItems="center">
       <Grid item  xs={12} sm={8} md={8}>
-      {urun &&   <ImageShow images={urun.Images}/>}
+      {urun && urun.Images &&  <ImageShow images={urun.Images}/>}
         <Typography color="textSecondary" >
           {urun ? urun.explanation:'Henüz Hiçbir Ürün verisi gelmedi'}
         </Typography>
@@ -75,7 +74,7 @@ function UrunCard(props) {
         <Grid item  xs={12} sm={4} md={4}>
         <div className={classes.cardPricing}>
                     <Typography component="h2" variant="h3" color="textPrimary">
-                     $ {urun && urun.price.USD}
+                     $ {urun && urun.price && urun.price.USD}
                     </Typography>
                     
                   </div>

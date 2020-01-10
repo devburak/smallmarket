@@ -9,10 +9,10 @@ const sepet = {
   item :[]
 }
 // create context
-export const SepetContext = createContext(sepet);
+export const SepetContext = createContext();
 // create Store
 function SepetStore({ children }) {
-
+  
   const [state, dispatch] = useReducer(sepetReducer, sepet);
   const value = { state, dispatch };
 

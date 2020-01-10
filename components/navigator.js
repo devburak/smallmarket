@@ -74,8 +74,6 @@ useEffect(() => {
 
   return (
     <Drawer variant="permanent" {...other} > 
-     
-    {console.log('cc : ',categories)}
       <List disablePadding >
         <ListItem className={clsx(classes.firebase, classes.item, classes.itemCategory)} style={{ justifyContent: 'center' }}>
 
