@@ -2,12 +2,13 @@ import getConfig from 'next/config'
 import Paperbase from '../components/paperbase'
 const { serverRuntimeConfig, publicRuntimeConfig } = getConfig()
 import fetch from 'isomorphic-unfetch'
-
+import ListUrunler from '../components/listurunler'
 
 const Index = (props) => (
     <Paperbase categories = {props.categories} 
     siteinformation = {props.siteinformation}>
 
+      <ListUrunler />
     </Paperbase>
   )
   

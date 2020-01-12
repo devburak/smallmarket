@@ -66,7 +66,7 @@ function UrunCard(props) {
       <div className={classes.contentWrapper}>
       <Grid container spacing={2} alignItems="center">
       <Grid item  xs={12} sm={8} md={8}>
-      {urun && urun.Images &&  <ImageShow images={urun.Images}/>}
+      {urun && urun.Imageslength &&  <ImageShow images={urun.Images}/>}
         <Typography color="textSecondary" >
           {urun ? urun.explanation:'Henüz Hiçbir Ürün verisi gelmedi'}
         </Typography>
