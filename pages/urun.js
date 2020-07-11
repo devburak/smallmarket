@@ -17,7 +17,8 @@ const Urun = (props) => {
     )
 }
 
-Urun.getInitialProps = async function() {
+  
+  export async function getServerSideProps() {
     
     const res = await fetch(serverRuntimeConfig.appURL+'products');
     const data = await res.json();

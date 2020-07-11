@@ -61,6 +61,7 @@ function Navigator(props) {
   const { classes,  sitename, ...other } = props;
   const [categories, setCategories] = useState([])
 
+  
 useEffect(() => {
   async function fetchData() {
   const res = await fetch(publicRuntimeConfig.appURL+'allcategories');
@@ -70,6 +71,7 @@ useEffect(() => {
 }
   fetchData();
 },[]);
+
   const router = useRouter()
 
   return (
