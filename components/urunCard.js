@@ -14,11 +14,13 @@ import LabelIcon from '@material-ui/icons/Label';
 import RefreshIcon from '@material-ui/icons/Refresh';
 import ImageShow from './imageShow'
 import AddsepetButton from './addsepetButton';
+import Link from 'next/link'
+import Chip from '@material-ui/core/Chip';
 
 const styles = theme => ({
   paper: {
     maxWidth: 936,
-    margin: 'auto',
+    margin: 5,
     overflow: 'hidden',
   },
   searchBar: {
@@ -42,20 +44,35 @@ const styles = theme => ({
     alignItems: 'baseline',
     marginBottom: theme.spacing(2),
   },
+  shape: {
+    backgroundColor: theme.palette.primary.main,
+    width: 20,
+    height: 20,
+  },
 });
 
 function UrunCard(props) {
-  const { classes,urun } = props;
+  const { classes,urun,currency, list=false } = props;
+  const rectangle = <div className={classes.shape} />;
   return (
     <Paper className={classes.paper}>
       <AppBar className={classes.searchBar} position="static" color="default" elevation={0}>
         <Toolbar>
           <Grid container spacing={2} alignItems="center">
             <Grid item>
+             
               <LabelIcon className={classes.block} color="inherit" />
+              
             </Grid>
             <Grid item xs>
             {urun && urun.name }
+            </Grid>
+            <Grid item>
+            son <Chip
+                label={  urun.stok }
+                color="primary"
+                size="small"
+              /> adet
             </Grid>
             <Grid item>
             <AddsepetButton urunid={urun && urun._id}/>
@@ -66,18 +83,28 @@ function UrunCard(props) {
       <div className={classes.contentWrapper}>
       <Grid container spacing={2} alignItems="center">
       <Grid item  xs={12} sm={8} md={8}>
-      {urun && urun.Imageslength &&  <ImageShow images={urun.Images}/>}
-        <Typography color="textSecondary" >
+      {urun && urun.Images &&  <ImageShow images={urun.Images}/>}
+     { list ? "" :  <Typography color="textSecondary" >
           {urun ? urun.explanation:'Henüz Hiçbir Ürün verisi gelmedi'}
-        </Typography>
+        </Typography> 
+         
+        }
         </Grid>
         <Grid item  xs={12} sm={4} md={4}>
         <div className={classes.cardPricing}>
                     <Typography component="h2" variant="h3" color="textPrimary">
-                     $ {urun && urun.price && urun.price.USD}
+                     {urun && urun.price && (urun.price.USD||0 * parseFloat(currency.USD) ).toFixed(2)} &#8378;
                     </Typography>
                     
+                    
                   </div>
+                  <Typography component="p" 
+                     color="textPrimary"> 
+                   
+                     </Typography>
+                  {list? <Link color="inherit" href={"/urun/" + urun._id}>
+            <Button  color="primary" style={{width:"100%"}}>Ürün Detayı</Button>
+         </Link> :""}
         </Grid>
         
         </Grid>

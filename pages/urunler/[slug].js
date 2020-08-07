@@ -1,6 +1,6 @@
 import getConfig from 'next/config'
-import Paperbase from '../components/paperbase'
-import UrunCard from '../components/urunCard'
+import Paperbase from '../../components/paperbase'
+import UrunCard from '../../components/urunCard'
 const { serverRuntimeConfig, publicRuntimeConfig } = getConfig()
 import fetch from 'isomorphic-unfetch'
 
@@ -18,10 +18,15 @@ const Urun = (props) => {
 }
 
   
-  export async function getServerSideProps() {
-    
+  export async function getServerSideProps(context) {
+    const { slug } = context.query;
+    console.log(slug)
+    var currency = {}
     const res = await fetch(serverRuntimeConfig.appURL+'products');
     const data = await res.json();
-    return {urunler : data}
+
+    const currest = await fetch(serverRuntimeConfig.appURL+'currency');
+    currency = await currest.json();
+    return {props: {urunler : data , currency:currency}}
   }
   export default Urun;

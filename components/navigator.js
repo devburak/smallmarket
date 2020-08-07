@@ -95,7 +95,7 @@ useEffect(() => {
                 button
                 className={clsx(classes.item, active && classes.itemActiveItem)}
               >
-
+                <Link color="inherit" href={"/list/" + slug}>
                 <ListItemText
                   classes={{
                     primary: classes.itemPrimary,
@@ -103,6 +103,7 @@ useEffect(() => {
                 >
                   {name}
                 </ListItemText>
+                </Link>
               </ListItem>
             </React.Fragment>
           )
